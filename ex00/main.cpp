@@ -2,7 +2,7 @@
 
 int	main(void)
 {
-	Zombie	*heap_zombie;
+	Zombie*	heap_zombie;
 
 	std::cout << "Creating a zombie in the heap...\n";
 	heap_zombie = newZombie("Tom");
@@ -17,7 +17,7 @@ int	main(void)
 	std::cout << "Creating a zombie in the stack (they will die right after their creation)...\n";
 	randomChump("Patrick");
 	std::cout << "\nNow let's get rid of Tom, our heap zombie...\n";
-	heap_zombie->~Zombie();
+	delete heap_zombie;
 	std::cout << "\nAll done. Bye!\n";
 	return (0);
 }

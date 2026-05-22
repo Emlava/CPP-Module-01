@@ -2,9 +2,8 @@
 
 void	randomChump(std::string name)
 {
-	Zombie	chump;
+	Zombie	chump(name);
 
-	chump.set_name(name);
 	chump.announce();
 	return ; // Destructor called automatically
 }
