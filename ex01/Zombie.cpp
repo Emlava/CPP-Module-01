@@ -1,6 +1,7 @@
 #include "Zombie.hpp"
 
 // Method definitions
+Zombie::Zombie(void) { std::cout << "Creating zombie.\n"; }
 
 void	Zombie::set_name(std::string new_name) { name = new_name; }
 

@@ -4,7 +4,7 @@ void	announce_and_kill_zombies(Zombie* zombies, int N)
 {
 	int	i = 0;
 
-	std::cout << "All zombies of the horde will now announce themselves:\n";
+	std::cout << "\nAll zombies of the horde will now announce themselves:\n";
 	while (i < N)
 	{
 		std::cout << "Zombie " << i + 1 << '\n';
@@ -44,8 +44,8 @@ int	main(void)
 			std::cout << '\n';
 			return (2);
 		}
-		std::cout << '\n';
 	}
+	std::cout << '\n';
 	zombies = zombieHorde(N, name);
 	if (!zombies)
 	{

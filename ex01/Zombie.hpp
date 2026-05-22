@@ -9,6 +9,8 @@ class Zombie
 	private:
 		std::string	name;
 	public:
+	 	// Constructor
+		Zombie(void);
 		void	set_name(std::string new_name);
 		void	announce(void);
 		// Destructor
