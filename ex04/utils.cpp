@@ -8,7 +8,14 @@ static void	replace_s1(std::string& line, std::string s1,
 	{
 		// -If s2 is shorter than s1, remove the extra characters in s1
 		if (s2.size() < s1.size())
-			line.erase(s1_position, s2.size() - s1.size());
+		{
+			line.erase(s1_position, s1.size() - s2.size());
+			//
+			std::cout << "Position of s1: " << s1_position << '\n';
+			std::cout << "Characters to remove: " << s1.size() - s2.size() << '\n';
+			std::cout << "Resulting line: " << line << '\n';
+			//
+		}
 		// -Else if the position of the last character of line is less than the position of s1 + length of s2 - 1,
 		// expand the string by the necessary characters
 		else if (line.size() < s1_position + s2.size() - 1)
