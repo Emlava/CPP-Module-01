@@ -15,7 +15,7 @@ int	main(int ac, char *av[])
 		std::cout << "Failed to open " << av[1] << ".\n";
 		return (2);
 	}
-	std::fstream	file_copy(std::string(av[1]) + ".replace", std::fstream::out);
+	std::fstream	file_copy((std::string(av[1]) + ".replace").c_str(), std::fstream::out);
 
 	if (file_copy.fail())
 	{
