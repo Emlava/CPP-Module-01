@@ -1,4 +1,4 @@
-NAME = harl_complaining
+NAME = harlFilter
 CPPC = c++
 FLAGS = -Wall -Werror -Wextra -std=c++98
 OBJECTS = main.o Harl.o

@@ -3,25 +3,29 @@
 // Private methods
 void	Harl::debug(void)
 {
-		std::cout << "This is a debugging message: diagnosis information would go here.\n";
+		std::cout << "[ DEBUG ]\n";
+		std::cout << "This is a debugging message: diagnosis information would go here.\n\n";
 		return ;
 }
 
 void	Harl::info(void)
 {
-		std::cout << "This is a message with extensive information.\n";
+		std::cout << "[ INFO ]\n";
+		std::cout << "This is a message with extensive information: info would go here.\n\n";
 		return ;
 }
 
 void	Harl::warning(void)
 {
-		std::cout << "This is a message with a warning: be more careful next time.\n";
+		std::cout << "[ WARNING ]\n";
+		std::cout << "This is a message with a warning: be more careful next time.\n\n";
 		return ;
 }
 
 void	Harl::error(void)
 {
-		std::cout << "This is an error message: critical information would go here.\n";
+		std::cout << "[ ERROR ]\n";
+		std::cout << "This is an error message: critical information would go here.\n\n";
 		return ;
 }
 
