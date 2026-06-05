@@ -1,17 +1,17 @@
 #include "Harl.hpp"
 
-bool	find_selected_level(std::string level, std::string (&level_arr)[4], int& i)
+int	find_selected_level(std::string level, std::string (&level_arr)[4])
 {
-	i = 0;
+	int	i = 0;
 	int	arr_size = sizeof(level_arr) / sizeof(level_arr[0]);
 
 	while (i < arr_size)
 	{
 		if (level == level_arr[i])
-			return (true);
+			return (i);
 		i++;
 	}
-	return (false);
+	return (-1);
 }
 
 int	main(int ac, char *av[])
@@ -25,11 +25,7 @@ int	main(int ac, char *av[])
 		std::cout << "You need to enter one message level.\n";
 		return (1);
 	}
-	if (!find_selected_level(av[1], level_arr, i))
-	{
-		std::cout << "[ Probably complaining about insignificant problems ]\n";
-		return (0);
-	}
+	i = find_selected_level(av[1], level_arr);
 	switch (i)
 	{
 		case (0):
@@ -48,6 +44,10 @@ int	main(int ac, char *av[])
 			while (i < 4)
 				harl_instance.complain(level_arr[i++]);
 			break ;
+		default:
+			std::cout << "[ Probably complaining about insignificant problems ]\n";
 	}
+	// This could simply be done with one while loop just like the ones in each case,
+	// but, alas, they asked for this.
 	return (0);
 }

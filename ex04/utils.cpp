@@ -3,19 +3,11 @@
 static void	replace_s1(std::string& line, std::string s1,
 	size_t s1_position, std::string s2)
 {
-	// -Keep track of the position of s1
 	do
 	{
-		// -If s2 is shorter than s1, remove the extra characters in s1
-		if (s2.size() < s1.size())
-			line.erase(s1_position, s1.size() - s2.size());
-		// -Else if the position of the last character of line is less than the position of s1 + length of s2 - 1,
-		// expand the string by the necessary characters
-		else if (line.size() < s1_position + s2.size() - 1)
-			line.resize(s1_position + s2.size() - 1);
-		// -Replace s1 by s2
-		line.replace(s1_position, s2.size(), s2);
-		// -Look if there are any further instances of s1 in the string and repeat
+		line.erase(s1_position, s1.size());
+		line.resize(line.size() + s2.size());
+		line.insert(s1_position, s2);
 		s1_position = line.find(s1);
 	} while (s1_position != std::string::npos);
 
